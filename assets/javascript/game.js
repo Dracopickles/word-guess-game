@@ -28,7 +28,7 @@ function Game() {
     blankAndCorrect.push("_");
   }
 
-  document.getElementById("currentWord").innerHTML = " " + blankAndCorrect.join(" ");
+  
 
   console.log(selectedWord);
   console.log(lettersOfWord);
@@ -70,7 +70,7 @@ function checkLetters(letter){
 }
 
 function complete() {
-  console.log("wins:" + wins + "| losses:" + losses + "| guesses left:" + guessesRemaining)
+  console.log("wins:" + wins + "| losses:" + losses + "| Letters Guessed Wrong:" + guessesRemaining)
 
   if (lettersOfWord.toString() == blankAndCorrect.toString()){
     wins++;
@@ -83,10 +83,11 @@ function complete() {
     reset()
     document.getElementById("lose-counter").innerHTML = " " + losses;
    }
-   
-   document.getElementById("currentword").innerHTML = "  " + blankAndCorrect.join(" ");
+   document.getElementById("currentWord").innerHTML = " " + blankAndCorrect.join(" ");
    document.getElementById("guesses-remaining").innerHTML = " " + guessesRemaining;
 }
+
+
 
 Game()
 
@@ -101,3 +102,6 @@ document.onkeyup = function (event) {
 
   document.getElementById("playerGuesses").innerHTML = " " + wrongGuess.join(" ");
 }
+
+
+
